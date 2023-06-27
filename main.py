@@ -32,7 +32,7 @@ def start():
         response = s3_client.head_bucket(Bucket=s3_bucket_name)
     except Exception as e:
         # S3 연결 실패 시 오류 메시지 출력 후 프로그램 종료
-        print(f'{Bcolors.Red}- Failed to connect to the "security.system.log.backup" bucket. '
+        print(f'{Bcolors.Red}- Failed to connect to the {s3_bucket_name} bucket. '
               f'Check your AWS credentials and configuration.{Bcolors.Endc}')
         print(f'{Bcolors.Red}- Error: {str(e)}{Bcolors.Endc}')
         sys.exit(1)
